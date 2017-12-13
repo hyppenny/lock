@@ -71,6 +71,15 @@ class fileItself(Resource):
             content = f.readlines()
         return content
 
+    def delete(self, filename):
+        file_path  = os.path.join(os.path.dirname(os.path.realpath(__file__)), "example")
+        f = [f for f in filelist if f == filename]
+        if len(f) == 0:
+            return False
+        deletePath = os.path.join(file_path, filename)
+        filelist.remove(filelist.index(filename))
+        print(filelist)
+        return True
 
 
 api.add_resource(fileList, '/fileList')

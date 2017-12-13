@@ -31,8 +31,16 @@ class clientLibrary():
         request = requests.put("http://127.0.0.1:2333/file/{}".format(filename), json= {'content': content})
         content = json.loads(request.text)
         if content == False:
-            print("File does not exist")
+            print("File does not exist")#???
         else:
             for c in content:
                 print(c, end='')
             print("\nFile has been changed")
+
+    def delete(self, filename):
+        request = requests.delete("http://127.0.0.1:2333/file/{}".format(filename))
+        content = json.loads(request.text)
+        if content == False:
+            print("File does not exist")
+        else:
+            print("File deleted")#???

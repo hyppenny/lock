@@ -23,7 +23,9 @@ if __name__ == "__main__":
             clientLibrary.add(clientLibrary, f, content)
 
         elif option == 5:
-            pass
+            clientLibrary.filelist(clientLibrary)
+            f = input("Please input the file you want to delete:")
+            clientLibrary.delete(clientLibrary, f)
 
         elif option == 6:
             pass
