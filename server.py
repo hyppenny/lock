@@ -29,6 +29,13 @@ class fileItself(Resource):
     def get(self, f):
         file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "example")
         print(os.path.join(file_path, f))
+        file = ''
+        for f1 in filelist:
+            if f1 == f:
+                file = f1
+        # print(file)
+        if len(file) == 0:
+            return False
         with open(os.path.join(file_path, f)) as f:
             data = f.readlines()
         return data
@@ -41,8 +48,12 @@ api.add_resource(fileList, '/fileList')
 api.add_resource(fileItself, '/file/<string:f>')
 
 if __name__ == '__main__':
-    app.run(port=2333)
+    filelist = []
     file_path = os.path.dirname(os.path.realpath(__file__)) + "/example"
-    content = open(os.path.join(file_path, "file1.txt")).readlines()
+    for filename in os.listdir(file_path):
+        print(filename)
+        filelist.append(filename)
+    '''content = open(os.path.join(file_path, "file1.txt")).readlines()
     for c in content:
-        print(c, end='')
+        print(c, end='')'''
+    app.run(port=2333)

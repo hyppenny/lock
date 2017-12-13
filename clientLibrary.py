@@ -10,6 +10,9 @@ class clientLibrary():
 
     def read(self, f):
         request = requests.get("http://127.0.0.1:2333/file/{}".format(f))
-        data = json.loads(request.text)
-        for d in data:
-            print(d, end='')
+        content = json.loads(request.text)
+        if content == False:
+            print("File does not exist")
+        else:
+            for c in content:
+                print(c, end='')
