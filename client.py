@@ -13,11 +13,14 @@ if __name__ == "__main__":
             clientLibrary.read(clientLibrary, f)
 
         elif option == 3:
-            pass
+            clientLibrary.filelist(clientLibrary)
+            f = input("Please input the file name you want to edit:")
+            content = input("Please input the new content:")
+            clientLibrary.edit(clientLibrary, f, content)
         elif option == 4:
             f = input("Please input the name of the file you want to add: ")
-            file_content  = input("Please input the content of your file:")
-            clientLibrary.add(clientLibrary, f, file_content)
+            content  = input("Please input the content of your file:")
+            clientLibrary.add(clientLibrary, f, content)
 
         elif option == 5:
             pass

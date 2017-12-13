@@ -26,3 +26,13 @@ class clientLibrary():
             for c in content:
                 print(c, end='')
             print("File has been added successfully")
+
+    def edit(self, filename, content):
+        request = requests.put("http://127.0.0.1:2333/example/{}".format(filename), json= {'content': content})
+        content = json.loads(request.text)
+        if content == False:
+            print("File does not exist")
+        else:
+            for c in content:
+                print(c, end='')
+            print("\nFile has been changed")

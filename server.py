@@ -56,8 +56,21 @@ class fileItself(Resource):
             data = f.readlines()
         return data
 
-    def post(self):
-        pass
+    def edit(self, filename):
+        request = reqparse.RequestParser()
+        request.add_argument('content', type=str, location='json')
+        file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "example")
+        f = [f for f in filelist if f == filename]
+        if len(f) == 0:
+            return False
+        editPath = os.path.join(file_path, filename)
+        currentFile = open(editPath, 'w')
+        currentFile.write(request.parse_args()['content'])
+        currentFile.close()
+        with open(os.path.join(file_path, filename)) as f:
+            content = f.readlines()
+        return content
+
 
 
 api.add_resource(fileList, '/fileList')
