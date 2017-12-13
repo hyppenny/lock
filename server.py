@@ -28,3 +28,8 @@ api.add_resource(Test, '/test')
 
 if __name__ == '__main__':
     app.run(port = 2333)
+    file_path = os.path.dirname(os.path.realpath(__file__)) + "/example"
+    content = open(os.path.join(file_path, "file1.txt")).readlines()
+    for c in content:
+        print(c, end = '')
+
