@@ -16,3 +16,13 @@ class clientLibrary():
         else:
             for c in content:
                 print(c, end='')
+
+    def add(self, filename, content):
+        request = requests.post("http://127.0.0.1:2333/fileList", json = {'filename': filename, 'content':content})
+        content = json.loads(request.text)
+        if content == False:
+            print("File existed already")
+        else:
+            for c in content:
+                print(c, end='')
+            print("File has been added successfully")

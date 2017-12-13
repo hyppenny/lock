@@ -21,8 +21,24 @@ class fileList(Resource):
 
     def post(self):
         request = reqparse.RequestParser()
-        request.add_argument('post', type=str, location='json')
-        print(request.parse_args()['post'])
+        request.add_argument('filename', type=str, location='json')
+        request.add_argument('content', type=str, location='json')
+
+        print(request.parse_args()['filename'], "to add")
+        filename = request.parse_args()['filename']
+        file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "example")
+        f = [f for f in filelist if f == filename]
+        if len(f)!= 0:
+            return False
+        filelist.append(filename)
+        addPath = os.path.join(file_path, filename)
+        addFile = open(addPath, 'w')
+        addFile.write(request.parse_args()['content'])
+        addFile.close()
+        with open(os.path.join(file_path, f)) as f:
+            data = f.readlines()
+        return data
+
 
 
 class fileItself(Resource):
