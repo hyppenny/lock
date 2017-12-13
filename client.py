@@ -8,8 +8,8 @@ if __name__ == "__main__":
 
     if option == 2:
         clientLibrary.filelist(clientLibrary)
-        f = input("Please input thr file you want to read:")
-        clientLibrary.filelist(f)
+        f = input("Please input the file you want to read:")
+        clientLibrary.read(clientLibrary, f)
 
 
     '''if option == 3:
