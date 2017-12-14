@@ -91,10 +91,14 @@ api.add_resource(fileItself, '/file/<string:f>')
 if __name__ == '__main__':
     filelist = []
     file_path = os.path.dirname(os.path.realpath(__file__)) + "/example"
+    dir_path = os.path.dirname(os.path.realpath(__file__))+'\\example'
     for filename in os.listdir(file_path):
         print(filename)
         filelist.append(filename)
-    '''content = open(os.path.join(file_path, "file1.txt")).readlines()
-    for c in content:
-        print(c, end='')'''
+
+    for dir,subDir, filelist in os.walk(file_path):
+        print('Dir: root{}'.format(dir[dir.rfind(file_path) + len(file_path):]))
+        for f in filelist:
+            print('\t{}'.format(f))
+
     app.run(port=2333)

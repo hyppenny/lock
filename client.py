@@ -28,5 +28,5 @@ if __name__ == "__main__":
             clientLibrary.delete(clientLibrary, f)
 
         elif option == 6:
-            pass
+            break
 #request = requests.post("http://127.0.0.1:2333/test", json={'post': "Connected"})
