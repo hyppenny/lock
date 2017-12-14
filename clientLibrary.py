@@ -29,6 +29,7 @@ class clientLibrary():
 
     def edit(self, filename, content):
         request = requests.put("http://127.0.0.1:2333/file/{}".format(filename), json= {'content': content})
+        print(request)
         #print("")
         content = json.loads(request.text)
         if content is False:
@@ -48,7 +49,7 @@ class clientLibrary():
             print("File deleted")#???
 
     def folder(self, path):
-        request = requests.get("http://{path}/folder".format(path))
+        request = requests.get("http://{}/folder".format(path))
         foldername = json.loads(request.text)
         print("Folder:")
         for f in foldername:

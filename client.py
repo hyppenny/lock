@@ -3,7 +3,7 @@ from clientLibrary import clientLibrary
 
 if __name__ == "__main__":
     while True:
-        option = int (input("\nPlease input a number from menu:\n1.View file\n2.Read file\n3.Edit file\n4.Add file\n5.Delete file\n6.View folder\n\n7.Add folder\n8.Rename folder\n9.Delete folder\n10.Exit"))
+        option = int (input("\nPlease input a number from menu:\n1.View file\n2.Read file\n3.Edit file\n4.Add file\n5.Delete file\n6.View folder\n7.Add folder\n8.Rename folder\n9.Delete folder\n10.Exit\n"))
         if option == 1:
             clientLibrary.filelist(clientLibrary)
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
 
         elif option == 7:
-            f = input("Please input the directory of your new folder:")
+            f = input("Please input the name of your new folder:")
             clientLibrary.addFolder(clientLibrary, "127.0.0.1:2333", f)
 
         elif option == 8:
