@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-import os
+import os,subprocess
 
 app = Flask(__name__)
 api = Api(app)
@@ -84,21 +84,47 @@ class fileItself(Resource):
         print(filelist)
         return True
 
+class folder(Resource):
+    def get(self):
+        return dirlist
+
+    def post(self):
+        request = reqparse.RequestParser()
+        request.add_argument('folder', type=str, location='json')
+        newdir = request.parse_args()['folder']
+        d = [d for d in dirlist if d == newdir]
+        if len(d) != 0:
+            return False
+        os.makedirs(os.path.join(file_path, newdir))
+        dirlist.append(newdir)
+        return True
+
+    def put(self):
+        pass
+
+    def delete(self):
+        pass
+
+
+
 
 api.add_resource(fileList, '/fileList')
 api.add_resource(fileItself, '/file/<string:f>')
+api.add_resource(folder, '/folder')
 
 if __name__ == '__main__':
+    dirlist = []
     filelist = []
     file_path = os.path.dirname(os.path.realpath(__file__)) + "/example"
-    dir_path = os.path.dirname(os.path.realpath(__file__))+'\\example'
-    for filename in os.listdir(file_path):
-        print(filename)
-        filelist.append(filename)
-
-    for dir,subDir, filelist in os.walk(file_path):
-        print('Dir: root{}'.format(dir[dir.rfind(file_path) + len(file_path):]))
-        for f in filelist:
-            print('\t{}'.format(f))
+    dir_path = os.path.dirname(os.path.realpath(__file__))+ "/example"
+    #print(file_path)
+    del dirlist[:]
+    del filelist[:]
+    for dir, subDir, fileList in os.walk(file_path):
+        print('Dir: {}'.format(dir[dir.rfind(file_path) + len(file_path) + 1:]))
+        dirlist.append(dir[dir.rfind(file_path) + len(file_path) + 1:])
+        for f in fileList:
+            print(f)
+            filelist.append(os.path.join(dir, f)[os.path.join(file_path, f).rfind(dir_path) + len(dir_path) + 1:])
 
     app.run(port=2333)

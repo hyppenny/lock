@@ -46,3 +46,18 @@ class clientLibrary():
             print("File does not exist")
         else:
             print("File deleted")#???
+
+    def folder(self, path):
+        request = requests.get("http://{path}/folder".format(path))
+        foldername = json.loads(request.text)
+        print("Folder:")
+        for f in foldername:
+            print(f)
+
+    def addFolder(self, path, foldername):
+        request = requests.post("http://{}/folder".format(path), json={'foldername':foldername})
+        content = json.loads(request.text)
+        if content:
+            print("Folder added")
+        else:
+            print("Folder already exist")

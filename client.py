@@ -28,10 +28,12 @@ if __name__ == "__main__":
             clientLibrary.delete(clientLibrary, f)
 
         elif option == 6:
-            break
+            clientLibrary.folder(clientLibrary, "127.0.0.1:2333")
+
 
         elif option == 7:
-            break
+            f = input("Please input the directory of your new folder:")
+            clientLibrary.addFolder(clientLibrary, "127.0.0.1:2333", f)
 
         elif option == 8:
             break
