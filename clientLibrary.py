@@ -11,7 +11,7 @@ class clientLibrary():
     def read(self, f):
         request = requests.get("http://127.0.0.1:2333/file/{}".format(f))
         content = json.loads(request.text)
-        if content == False:
+        if content is False:
             print("File does not exist")
         else:
             for c in content:
@@ -20,7 +20,7 @@ class clientLibrary():
     def add(self, filename, content):
         request = requests.post("http://127.0.0.1:2333/fileList", json = {'filename': filename, 'content':content})
         content = json.loads(request.text)
-        if content == False:
+        if content is False:
             print("File existed already")
         else:
             for c in content:
@@ -29,8 +29,9 @@ class clientLibrary():
 
     def edit(self, filename, content):
         request = requests.put("http://127.0.0.1:2333/file/{}".format(filename), json= {'content': content})
+        #print("")
         content = json.loads(request.text)
-        if content == False:
+        if content is False:
             print("File does not exist")#???
         else:
             for c in content:
@@ -39,8 +40,9 @@ class clientLibrary():
 
     def delete(self, filename):
         request = requests.delete("http://127.0.0.1:2333/file/{}".format(filename))
+        #print(request.text)
         content = json.loads(request.text)
-        if content == False:
+        if content is False:
             print("File does not exist")
         else:
             print("File deleted")#???

@@ -20,7 +20,7 @@ if __name__ == "__main__":
         elif option == 4:
             f = input("Please input the name of the file you want to add: ")
             content  = input("Please input the content of your file:")
-            clientLibrary.add(clientLibrary, f, content)
+            clientLibrary.delete(clientLibrary, f, content)
 
         elif option == 5:
             clientLibrary.filelist(clientLibrary)
@@ -29,4 +29,4 @@ if __name__ == "__main__":
 
         elif option == 6:
             pass
-request = requests.post("http://127.0.0.1:2333/test", json={'post': "Connected"})
+#request = requests.post("http://127.0.0.1:2333/test", json={'post': "Connected"})

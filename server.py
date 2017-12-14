@@ -56,7 +56,7 @@ class fileItself(Resource):
             data = f.readlines()
         return data
 
-    def edit(self, filename):
+    def put(self, filename):
         request = reqparse.RequestParser()
         request.add_argument('content', type=str, location='json')
         file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "example")
@@ -72,12 +72,15 @@ class fileItself(Resource):
         return content
 
     def delete(self, filename):
+        #print("111")
         file_path  = os.path.join(os.path.dirname(os.path.realpath(__file__)), "example")
         f = [f for f in filelist if f == filename]
         if len(f) == 0:
             return False
         deletePath = os.path.join(file_path, filename)
+        os.remove(deletePath)
         filelist.remove(filelist.index(filename))
+        #print('222')
         print(filelist)
         return True
 
