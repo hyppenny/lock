@@ -29,7 +29,7 @@ class clientLibrary():
 
     def edit(self, filename, content):
         request = requests.put("http://127.0.0.1:2333/file/{}".format(filename), json= {'content': content})
-        print(request)
+        #print(request)
         #print("")
         content = json.loads(request.text)
         if content is False:
@@ -41,7 +41,7 @@ class clientLibrary():
 
     def delete(self, filename):
         request = requests.delete("http://127.0.0.1:2333/file/{}".format(filename))
-        #print(request.text)
+        print(request.text)
         content = json.loads(request.text)
         if content is False:
             print("File does not exist")
@@ -56,7 +56,7 @@ class clientLibrary():
             print(f)
 
     def addFolder(self, path, foldername):
-        request = requests.post("http://{}/folder".format(path), json={'foldername':foldername})
+        request = requests.post("http://{}/folder".format(path), json={'folder':foldername})
         #print(request)
         content = json.loads(request.text)
         if content:
@@ -69,5 +69,13 @@ class clientLibrary():
         content = json.loads(request.text)
         if content:
             print("Folder renamed")
+        else:
+            print("Folder does not exist")
+
+    def deleteFolder(self, path, folder):
+        request = requests.delete("http://{}/folder".format(path), json={'folder': folder})
+        content = json.loads(request.text)
+        if content:
+            print("Folder deleted")
         else:
             print("Folder does not exist")
