@@ -79,3 +79,21 @@ class clientLibrary():
             print("Folder deleted")
         else:
             print("Folder does not exist")
+
+    def lockFile(self, path, filename):
+        request = requests.get("http://{}/lock/{}".format(path, filename))
+        content = json.loads(request.text)
+        if content:
+            print("File has been locked successfully")
+        else:
+            #print("File occupied")
+            return False
+
+    def unlockFile(self, path, filename):
+        request = requests.delete("http://{}/lock/{}".format(path, filename))
+        content = json.loads(request.text)
+        if content:
+            print("File unlocked")
+
+
+

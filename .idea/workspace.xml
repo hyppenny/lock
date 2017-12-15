@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46238c22-4e87-452f-9c9c-b6d19ad10f1f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lockServer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client.py" afterPath="$PROJECT_DIR$/client.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clientLibrary.py" afterPath="$PROJECT_DIR$/clientLibrary.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/11111" afterPath="$PROJECT_DIR$/example/11111" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lockServer.py" afterPath="$PROJECT_DIR$/lockServer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <list id="e104afb0-8cf3-46ec-9162-896b92476359" name="TransparentFileAccess" comment="" />
@@ -23,22 +25,10 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="134" column="19" lean-forward="false" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+            <state relative-caret-position="135">
+              <caret line="128" column="44" lean-forward="true" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lockServer.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lockServer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-              <folding>
-                <element signature="e#1#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,8 +37,8 @@
       <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="147">
+              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -56,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clientLibrary.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="clientLibrary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clientLibrary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-740">
-              <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+            <state relative-caret-position="52">
+              <caret line="84" column="42" lean-forward="true" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -82,6 +72,8 @@
       <find>messa</find>
       <find>put</find>
       <find>dir</find>
+      <find>out</find>
+      <find>timeout</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -96,16 +88,16 @@
       <list>
         <option value="$PROJECT_DIR$/example/file1.txt" />
         <option value="$PROJECT_DIR$/example/file2.txt" />
-        <option value="$PROJECT_DIR$/clientLibrary.py" />
-        <option value="$PROJECT_DIR$/client.py" />
-        <option value="$PROJECT_DIR$/server.py" />
         <option value="$PROJECT_DIR$/lockServer.py" />
+        <option value="$PROJECT_DIR$/server.py" />
+        <option value="$PROJECT_DIR$/client.py" />
+        <option value="$PROJECT_DIR$/clientLibrary.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="157" />
-    <option name="y" value="23" />
+    <option name="x" value="316" />
+    <option name="y" value="26" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
@@ -282,13 +274,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="157" y="23" width="1280" height="709" extended-state="0" />
+    <frame x="316" y="26" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38897893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -557,41 +549,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clientLibrary.py">
+    <entry file="file://$PROJECT_DIR$/lockServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-740">
-          <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="134" column="19" lean-forward="false" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+        <state relative-caret-position="135">
+          <caret line="128" column="44" lean-forward="true" selection-start-line="128" selection-start-column="44" selection-end-line="128" selection-end-column="44" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lockServer.py">
+    <entry file="file://$PROJECT_DIR$/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="19" column="39" lean-forward="true" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="147">
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding>
-            <element signature="e#1#37#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientLibrary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="84" column="42" lean-forward="true" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

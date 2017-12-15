@@ -126,14 +126,22 @@ class folder(Resource):
         request = reqparse.RequestParser()
         request.add_argument('folder', type=str, location='json')
         dir = request.parse_args()['folder']
-        d= [d for d in dirlist if d ==dir]
+        d = [d for d in dirlist if d == dir]
         if len(d) == 0:
             return False
         shutil.rmtree(os.path.join(file_path, dir))
         updateList()
-
         return True
 
+class lockService(Resource):
+    def get(self,filename):
+        request = reqparse.RequestParser()
+        l = [l for l in lock if l[:len(filename)] == filename]
+        if len(l) == 0:
+            lock.append(filename)
+            return True
+        if not filename:
+            return "File doe not exist"
 
 
 
@@ -142,6 +150,7 @@ class folder(Resource):
 api.add_resource(fileList, '/fileList')
 api.add_resource(fileItself, '/file/<string:filename>')
 api.add_resource(folder, '/folder')
+api.add_resource(lockService, "/lock/<string:filename>")
 
 def updateList():
 
@@ -159,6 +168,7 @@ def updateList():
 if __name__ == '__main__':
     dirlist = []
     filelist = []
+    lock = []
     file_path = os.path.dirname(os.path.realpath(__file__)) + "/example"
     dir_path = os.path.dirname(os.path.realpath(__file__))+ "/example"
     app.run(port=2333)

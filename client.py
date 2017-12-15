@@ -15,8 +15,13 @@ if __name__ == "__main__":
         elif option == 3:
             clientLibrary.filelist(clientLibrary)
             f = input("Please input the file name you want to edit:")
-            content = input("Please input the new content:")
-            clientLibrary.edit(clientLibrary, f, content)
+            if clientLibrary.lockFile(clientLibrary, "127.0.0.1:2333", f) != False:
+                content = input("Please input the new content:")
+                clientLibrary.edit(clientLibrary, f, content)
+                clientLibrary.unlockFile(clientLibrary, "127.0.0.1:2333", f)
+            else:
+                print("File occupied")
+
         elif option == 4:
             f = input("Please input the name of the file you want to add: ")
             content  = input("Please input the content of your file:")
