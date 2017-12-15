@@ -57,8 +57,17 @@ class clientLibrary():
 
     def addFolder(self, path, foldername):
         request = requests.post("http://{}/folder".format(path), json={'foldername':foldername})
+        #print(request)
         content = json.loads(request.text)
         if content:
             print("Folder added")
         else:
             print("Folder already exist")
+
+    def renameFolder(self, path, filename, newName):
+        request = requests.put("http://{}/folder".format(path), json={'filename': filename, 'newName': newName})
+        content = json.loads(request.text)
+        if content:
+            print("Folder renamed")
+        else:
+            print("Folder does not exist")

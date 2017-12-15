@@ -100,7 +100,18 @@ class folder(Resource):
         return True
 
     def put(self):
-        pass
+        request = reqparse.RequestParser()
+        request.add_argument('filename', type=str, location='json')
+        request.add_argument('newName', type=str, location='json')
+        filename = request.parse_args()['filename']
+        newName = request.parse_args()['newName']
+        d = [d for d in dirlist if d == filename]
+        if len(d) == 0:
+            return False
+        os.rename(os.path.join(file_path,filename),os.path.join(file_path, newName))
+        dirlist.remove(filename)
+        dirlist.append(newName)
+        return True
 
     def delete(self):
         pass
@@ -121,7 +132,7 @@ if __name__ == '__main__':
     del dirlist[:]
     del filelist[:]
     for dir, subDir, fileList in os.walk(file_path):
-        print('Dir: {}'.format(dir[dir.rfind(file_path) + len(file_path) + 1:]))
+        print('Directory: {}'.format(dir[dir.rfind(file_path) + len(file_path) + 1:]))
         dirlist.append(dir[dir.rfind(file_path) + len(file_path) + 1:])
         for f in fileList:
             print(f)

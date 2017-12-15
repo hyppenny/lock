@@ -36,7 +36,10 @@ if __name__ == "__main__":
             clientLibrary.addFolder(clientLibrary, "127.0.0.1:2333", f)
 
         elif option == 8:
-            break
+            filename = input("Please input the file you want to rename:")
+            newName = input("Please input the new name:")
+            clientLibrary.renameFolder(clientLibrary, "127.0.0.1:2333", filename, newName)
+
 
         elif option == 9:
             break
